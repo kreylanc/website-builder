@@ -37,17 +37,13 @@ const Navigation = ({ user }: NavigationProps) => {
       </nav>
       {/* Login, or User button and theme switcher  */}
       <div className="flex items-center gap-x-4">
-        {user ? (
-          <UserButton />
-        ) : (
-          <Link
-            href="/agency"
-            className="bg-primary text-primary-foreground p-2 px-4 rounded-md hover:bg-primary/80"
-          >
-            Login
-          </Link>
-        )}
-
+        <Link
+          href="/agency"
+          className="bg-primary text-primary-foreground p-2 px-4 rounded-md hover:bg-primary/80"
+        >
+          Login
+        </Link>
+        {user ? <UserButton /> : null}
         <ModeToggle />
       </div>
     </header>
